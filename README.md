@@ -49,31 +49,33 @@ On this example we are checking registration on a Windows 10 Hybrid Client
 
 2. AAD Token request (after installation) 
 
-*Getting AAD token for logged on user. Authority: https://login.microsoftonline.com/7A5AD1D5-XXXX-4428-XXXX-E4C9D9846E7F ClientId: 6a415267-XXXX-4d49-XXXX-4b283d300cf4 ResourceId: https://ConfigMgrService UserSID: S-1-5-21-XXXXXXXXXX-1260630808-XXXXXXXXXX-25583
+   *Getting AAD token for logged on user. Authority: https://login.microsoftonline.com/7A5AD1D5-XXXX-4428-XXXX-E4C9D9846E7F ClientId: 6a415267-XXXX-4d49-XXXX-4b283d300cf4 ResourceId: https://ConfigMgrService UserSID: S-1-5-21-XXXXXXXXXX-1260630808-XXXXXXXXXX-25583
 Attempting to obtain AAD token. WebAccountProviderId='https://login.windows.net', Authority='https://login.microsoftonline.com/7A5AD1D5-XXXX-4428-XXXX-E4C9D9846E7F', ClientID='6a415267-XXXX-4d49-XXXX-4b283d300cf4', ResourceId='https://ConfigMgrService', SessionId='2'
 Successfully obtained AAD token with WAM (ADALOperationProvider.log)*
 
 3. CCM Token request via CCM_STS channel
 
-3.1 Getting CCM Token from STS server 
+   3.1 Getting CCM Token from STS server 
 
-*'Getting CCM Token from STS server 'https://myCMG.cloudapp.net/CCM_Proxy_ServerAuth/9’ (CcmMessagin.log)
+     *'Getting CCM Token from STS server 'https://myCMG.cloudapp.net/CCM_Proxy_ServerAuth/9’ (CcmMessagin.log)
 Getting CCM Token from https://myCMG.cloudapp.net/CCM_Proxy_ServerAuth/9/CCM_STS*
 
-3.2 Proxy Connector transfer request from CMG to MP
+   3.2 Proxy Connector transfer request from CMG to MP
 
-*Request - MessageID: 68d2628a-4f50-4357-af56-1f0da3a75ae3 RequestURI:https://myCMG.cloudapp.net/CCM_Proxy_ServerAuth/9/CCM_STS
+      *Request - MessageID: 68d2628a-4f50-4357-af56-1f0da3a75ae3 RequestURI:https://myCMG.cloudapp.net/CCM_Proxy_ServerAuth/9/CCM_STS
 Response - MessageID: 68d2628a-4f50-4357-af56-1f0da3a75ae3 ResponseHeader: HTTP/1.1 200 OK (CMGService.log)
 (SMS_CLOUD_PROXYCONNECTOR.log)*
 
-3.3 Token Validation and reply to client:
+   3.3 Token Validation and reply to client:
 
-*Validated AAD token. TenantId: 239cf739-XXXX-4632-XXXX-9bXXXXXXXX08 UserId: 09a435fb-1bdd-4d6f-b49f-bc41c696171e DeviceId: 675b4fdc-893d-4a56-9abe-1303e07a4e2c OnPrem_UserSid: S-1-5-21-398374713-1260630808-142979382-25583 OnPrem_DeviceSid:
-Return token to client, token type: User, hierarchyId: e8b5d451-XXXX-462f-XXXX-b5b9cd580a56, userId: 96c95f8d-2748-465b-8b58-5feca75dbfda, deviceId: (CCM_STS.log)
+      *Validated AAD token. TenantId: 239cf739-XXXX-4632-XXXX-9bXXXXXXXX08 UserId: 09a435fb-1bdd-4d6f-b49f-bc41c696171e DeviceId: 675b4fdc-893d-4a56-9abe-1303e07a4e2c OnPrem_UserSid: S-1-5-21-398374713-1260630808-142979382-25583 OnPrem_DeviceSid:
+Return token to client, token type: User, hierarchyId: e8b5d451-XXXX-462f-XXXX-b5b9cd580a56, userId: 96c95f8d-2748-465b-8b58-5feca75dbfda, deviceId: (CCM_STS.log)*
+
 4. Once we get the CCM token back, we confirm registration
-Getting CCM Token from STS server ' https://myMP.Mylab.com'
+
+*Getting CCM Token from STS server ' https://myMP.Mylab.com'
 Getting CCM Token from https://myMP.Mylab.com/CCM_STS
-[RegTask] - Client is already registered. Exiting. (ClientIDManagerStartup.log)
+[RegTask] - Client is already registered. Exiting. (ClientIDManagerStartup.log)*
  
 
 ### Communication Validation
