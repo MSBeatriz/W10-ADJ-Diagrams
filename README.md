@@ -12,7 +12,7 @@ When Ccmsetup action starts, client will check if there is an azure user session
 
     *Retrieved AAD token for AAD device '82XXXXad-f062-XXXX-b062-dbXXXXac04d5' (CCMSetup.log)*
 
-> [!Note] 
+[!TIP] 
    >If WPJ certificate is not found, we do not try to request AAD token (client is not properly AAD joined)
    >AAD Device token usage available from 1806. You need to update teant settings on upgraded environments. AAD Device token is prefered
    >Traffic with invalid token will be blocked upfront of the CMG, preventing unnecessary communications to the internal roles
