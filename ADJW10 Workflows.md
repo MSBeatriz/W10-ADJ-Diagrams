@@ -35,7 +35,7 @@ When Ccmsetup action starts, client will check if there is an azure user session
    
       *Validated AAD token. TokenType: Device TenantId: cXXXXXX2-XXXX-4df9-XXXX-cddXXXXXXe0a UserId: 00000000-0000-0000-0000-000000000000 DeviceId: 82XXXXad-f062-XXXX-b062-dbXXXXac04d5 OnPrem_UserSid:  OnPrem_DeviceSid:*  
  
- ![Data flow diagram for Configuration Manager Client installation using AAD Auth] (/AADInstallWF.png)
+ ![Data flow diagram for Configuration Manager Client installation using AAD Auth](/AADInstallWF.png)
  
 ## Client authentication workflow during client registration
 
@@ -79,6 +79,7 @@ Return token to client, token type: User, hierarchyId: e8b5d451-XXXX-462f-XXXX-b
 Getting CCM Token from https://myMP.Mylab.com/CCM_STS
 [RegTask] - Client is already registered. Exiting. (ClientIDManagerStartup.log)*
  
+  ![Data flow diagram for Configuration Manager Client registration using AAD Auth](/AADRegWF.png)
 
 
 ### Communication Validation
