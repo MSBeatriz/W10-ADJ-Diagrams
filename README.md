@@ -12,10 +12,10 @@ When Ccmsetup action starts, client will check if there is an azure user session
 
     *Retrieved AAD token for AAD device '82XXXXad-f062-XXXX-b062-dbXXXXac04d5' (CCMSetup.log)*
 
-[!TIP] 
-   >If WPJ certificate is not found, we do not try to request AAD token (client is not properly AAD joined)
-   >AAD Device token usage available from 1806. You need to update teant settings on upgraded environments. AAD Device token is prefered
-   >Traffic with invalid token will be blocked upfront of the CMG, preventing unnecessary communications to the internal roles
+>[!TIPS] 
+   >- If WPJ certificate is not found, we do not try to request AAD token (client is not properly AAD joined)
+   >- AAD Device token usage available from 1806. You need to update teant settings on upgraded environments. AAD Device token is prefered
+   >- Traffic with invalid token will be blocked upfront of the CMG, preventing unnecessary communications to the internal roles
 
 2.	CCM Token Request (Using AAD User token) via CCM_STS channel
 
@@ -86,9 +86,9 @@ Getting CCM Token from https://myMP.Mylab.com/CCM_STS
 
 -Client verifies CMG service certificate (or management certificate)
 
-> [!Note]
-   > When using PKI for CMG Service certificate, client requires Root CA of the certificate on local store
-   > When using third party certificate for CMG service certificate, clients automatically validates certificate on internet
+>[!TIPS] 
+   >- When using PKI for CMG Service certificate, client requires Root CA of the certificate on local store
+   >- When using third party certificate for CMG service certificate, clients automatically validates certificate on internet
 
 
 ### Common issues
@@ -97,6 +97,6 @@ Getting CCM Token from https://myMP.Mylab.com/CCM_STS
 -WPJ cert not found ( client Azure regsitered, not AAD joined)
 
 
-> [!Note] 
->*Using /NoCRLCheck is only good for ccmsetup bootstrap for this case. For the clients to fully functional, admins need to disable CRL >check on that site’s client communication page. Otherwise after security settings refreshed by location service, the clients will not >talk to the server anymore.*
+> [!NOTE] 
+>*Using /NoCRLCheck is only good for ccmsetup bootstrap. For the clients to be fully functional, admins need to disable CRL check on the site’s properties communication page. Otherwise after security settings refreshed by location service, the clients will not talk to the server anymore.*
 
